@@ -67,7 +67,8 @@ yum -y install wget gcc make rpm-build autoconf.noarch zlib-devel pam-devel open
 wget http://openvpn.net/release/lzo-1.08-4.rf.src.rpm
 OS=`uname -m`;
 if [ $OS = 'i686' ]; then
-	wget http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.i686.rpm
+	#wget http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.i686.rpm
+	wget http://ftp.tu-chemnitz.de/pub/linux/dag/redhat/el6/en/i386/rpmforge/RPMS/rpmforge-release-0.5.3-1.el6.rf.i686.rpm
 elif [ $OS = 'x86_64' ]; then
 	wget http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm
 fi
