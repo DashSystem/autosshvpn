@@ -25,11 +25,7 @@ elif [[ `ifconfig -a | grep "eth0-00"` ]]
 then
 cekvirt='KVM'
 fi
-echo "======================"
-echo "Tentunkan port OpenVPN"
-echo "======================"
-read -p "Post TCP : " -e -i 465 TCP
-read -p "Post UDP : " -e -i 1194 UDP
+
 
 MYIP=$(ip addr | grep 'inet' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -o -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | head -1)
 if [[ "$MYIP" = "" ]]; then
@@ -38,8 +34,8 @@ fi
 
 ip="s/ip/$MYIP/g";
 
-PORT1="s/xxx/$TCP/g";
-PORT2="s/xxx/$UDP/g";
+PORT1="s/xxx/1194/g";
+PORT2="s/xxx/43/g";
 
 if [[ "$TCP" = "443" ]]; then
 		service dropbear stop
