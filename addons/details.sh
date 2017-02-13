@@ -4,11 +4,6 @@ MYIP=$(ip addr | grep 'inet' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{
 if [[ "$MYIP" = "" ]]; then
 		MYIP=$(wget -qO- nyobascript.esy.es/ip.php)
 fi
-echo ""  | tee -a log-install.txt
-echo "==============================================================" | tee -a log-install.txt
-echo "           Go-VPS.Net | cs@go-vps.net | 085645739470          " | tee log-install.txt
-echo "==============================================================" | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
 echo ">> Service"  | tee -a log-install.txt
 echo "-----------------------------------"  | tee -a log-install.txt
 echo "OpenVPN  : 465 1194 (Config: http://$MYIP:81/VPN-Client.zip)"  | tee -a log-install.txt
@@ -27,14 +22,4 @@ echo "Fail2Ban         : [on]"  | tee -a log-install.txt
 echo "IPv6             : [off]"  | tee -a log-install.txt
 echo "-----------------------------------"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
-echo ">> Script"  | tee -a log-install.txt
-echo "-----------------------------------"  | tee -a log-install.txt
-echo "Tambah User        : tambah namauser passuser"  | tee -a log-install.txt
-echo "Cek User Login     : login atau ./login.sh"  | tee -a log-install.txt
-echo "List User          : akun"  | tee -a log-install.txt
-echo "Kill User 2login+  : ./lmt.sh"  | tee -a log-install.txt
-echo "-----------------------------------"  | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "=============================================================="  | tee -a log-install.txt
-echo ""
 echo "REBOOT VPS ANDA!!!!"
