@@ -68,9 +68,9 @@ wget http://openvpn.net/release/lzo-1.08-4.rf.src.rpm
 OS=`uname -m`;
 if [ $OS = 'i686' ]; then
 	#wget http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.i686.rpm
-	wget http://ftp.tu-chemnitz.de/pub/linux/dag/redhat/el6/en/i386/rpmforge/RPMS/rpmforge-release-0.5.3-1.el6.rf.i686.rpm
+	wget https://ftp.tu-chemnitz.de/pub/linux/dag/redhat/el6/en/i386/rpmforge/RPMS/rpmforge-release-0.5.3-1.el6.rf.i686.rpm
 elif [ $OS = 'x86_64' ]; then
-	wget http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm
+	wget https://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm
 fi
 rpmbuild --rebuild lzo-1.08-4.rf.src.rpm
 rpm -Uvh lzo-*.rpm
@@ -91,9 +91,10 @@ echo -e "\n\n\n\n\n\n\n" | ./build-ca
 ./build-key kepalatupai
 
 yum install -y zip unzip
-wget http://safesrv.net/public/openvpn-auth-pam.zip
-unzip openvpn-auth-pam.zip
-rm -rf openvpn-auth-pam.zip
+#wget http://safesrv.net/public/openvpn-auth-pam.zip
+wget wget http://vpn.techinfozone.net/32bit-openvpn-auth-pam.zip
+unzip 32bit-openvpn-auth-pam.zip
+rm -rf 32bit-openvpn-auth-pam.zip
 mv openvpn-auth-pam.so /etc/openvpn/openvpn-auth-pam.so
 
 cd /etc/openvpn
